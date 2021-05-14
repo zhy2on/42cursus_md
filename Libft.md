@@ -56,10 +56,27 @@ size_t	ft_strlen(const char *s);
 ```
 
 ### strlcpy
-* c02-10문제. 크기 제한 문자열 복사 함수. NULL 종료를 보장해야 한다.
+* c02-10. 크기 제한 문자열 복사 함수. NULL 종료를 보장해야 한다.
 * size - 1 만큼 복사하고 마지막 문자를 널로 채운다.
 * strlcpy, strlcat은 생성하려고 한 문자열 전체 길이를 반환한다. strlcpy에서는 src의 길이가 반환된다.
 ```c
 size_t	strlcpy(char *dst, const char *src, size_t dstsize)
 ```
+
+### strlcat
+* c03-05
+* <https://whatdocumentary.tistory.com/45>
+*  strcat 함수와 동일하다. 보안 목적을 위해 strcat 대신 사용한다.
+* 복사될 문자열의 길이는 size - dst_len - 1(\0)이다. 끝에 널문자를 삽입한다.
+*  반환값은 dst와 복사된 src의 길이의 총합이다. 여기에는 NULL 값은 제외되어 계산된다.
+    - 여기서 예외 처리를 size가 dst길이 보다 작으면 그냥 리턴 0 되게 했었는데 그렇게 하면 안 됐었다.
+    - <https://m.blog.naver.com/PostView.nhn?blogId=01191879872&logNo=221111654384&proxyReferer=https:%2F%2Fwww.google.com%2F>
+    - 여기서 보면 strlen(src)는 고정이고, dest가 size보다 작으면 srclen + size, dest가 size보다 크면 srclen + dstlen이 되어야 한다.
+* size가 아무리 커도 src_len만큼 복사되고 끝난다.
+
+* j < src_len 은 src범위를 벗어나는 곳을 접근하는 것을 방지해준다. (dest_len + j) + 1 < size 는 dest_len을 제외한 size - 1만큼만 복사가 될 수
+ 있도록 한다. 마지막 널문자를 추가해주기 위함이다.
+```c
+
+
 
