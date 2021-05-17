@@ -77,6 +77,22 @@ size_t	strlcpy(char *dst, const char *src, size_t dstsize)
 * j < src_len 은 src범위를 벗어나는 곳을 접근하는 것을 방지해준다. (dest_len + j) + 1 < size 는 dest_len을 제외한 size - 1만큼만 복사가 될 수
  있도록 한다. 마지막 널문자를 추가해주기 위함이다.
 ```c
+size_t	ft_strlcat(char *dst, char *src, size_t dstsize);
+```
+
+### strchr
+* 문자열 s에서 char형 c가 "처음" 나타나는 위치 반환.
+* 문자열 끝을 나타내는 널문자까지 포함하여 검색해야 한다. 
+```c
+char	*ft_strchr(const char *s, int c);
+```
+
+### strrchr
+* 문자열 s에서 char형 c가 "마지막으로" 나타나는 위치 반환.
+* 문자열 끝을 나타내는 널문자까지 포함하여 검색해야 한다.
+```c
+char	*ft_strrchr(const char *s, int c);
+```
 
 
 
