@@ -95,5 +95,19 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 ```
 
-### 
+### strnstr
+* 문자열 haystack에서 문자열 needle이 "처음" 나타나는 위치 반환.
+* 대신 n길이 내에서 검색.
+* 이 때 haystack 앞에서부터 n 길이만큼의 범위 사이에서만 검색한다는 거.
+```c
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+```
+
+### strncmp
+* n개만큼 문자열 비교 함수.
+```c
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+```
+
+
 
