@@ -109,5 +109,43 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 ```
 
+### atoi
+* C04 - 03문제에서 int형 범위 말고 unsigned long long까지 고려해야 함.
+* 문자열을 정수로 바꾸는 함수.
+* 문자열 길이가 20넘어가면 양수일 때 -1, 음수일 때 0으로 값이 고정됨.
+```c
+int		ft_atoi(const char *str)
+```
 
+### isalpha
+* 알파벳이면 1 아니면 0
+
+### isdigit
+* 숫자면 1 아니면 0
+
+### isalnum
+* 알파벳 또는 숫자면 1 아니면 0
+
+### isascii
+* 아스키범위 내 값이면 1 아니면 0
+
+### isprint
+* printable이면 1 아니면 0
+* 0~31, 127
+
+### toupper
+* 소문자를 대문자로
+
+### tolower
+* 대문자를 소문자로
+
+### calloc
+* malloc과 같은데, 대신 할당된 공간을 0으로 채워줌.
+* 앞에서 구현했던 bzero를 사용하여 메모리를 0으로 채워주면 된다.
+* size에 자료형 크기가 들어가는 거고, count에 size 크기 자료형 몇 개만큼의 공간 할당할 건지 적어주면 된다. 최종적으로 count * size크기만큼의 공간이 할당 되는 것이다.
+```c
+void	*ft_calloc(size_t count, size_t size);
+```
+
+### strdup
 
