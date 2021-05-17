@@ -90,9 +90,10 @@ char	*ft_strchr(const char *s, int c);
 ### strrchr
 * 문자열 s에서 char형 c가 "마지막으로" 나타나는 위치 반환.
 * 문자열 끝을 나타내는 널문자까지 포함하여 검색해야 한다.
+* size_t는 unsigned int!! while (i >= 0) 이렇게 하면 안 되고 while (i > 0) 이렇게 사용하기.
 ```c
 char	*ft_strrchr(const char *s, int c);
 ```
 
-
+### 
 
