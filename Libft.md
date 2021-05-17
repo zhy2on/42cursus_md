@@ -148,4 +148,18 @@ void	*ft_calloc(size_t count, size_t size);
 ```
 
 ### strdup
+* 공간을 malloc으로 할당해주고, 해당 공간에 복사하고 주소 리턴해주는 함수.
+* C07 - 00문제
+* strdup
+  - strdup() 함수는 문자 s 를 복사하고 복사된 문자열을 가리키는 포인터를 반환한다. 문자를 복사할 공간을 확보하기 위해서 내부적으로 malloc(3)이 호출된다.
+  - 복사된 문자열의 주소를 가리키는 포인터를 반환한다. 에러발생시에는 NULL 을 되돌려준다.
+
+* malloc
+  - memory allocation
+  - 동적할당이라는 것은 프로그램 실행중에 동적으로 메모리를 할당하는 것을 말한다.
+  - 함수 원형은 void* malloc(size_t size) 로, 동적할당 후 해당 데이터 타입으로 형변환을 해줘야 한다. 또한 메모리 크기는 자료형마다 다르기 때문에 sizeof()을 사용하여 자료형의 크기에 원하는 할당 크기를 곱해준다.
+
+```c
+char	*ft_strdup(const char *src);
+```
 
