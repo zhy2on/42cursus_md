@@ -76,8 +76,26 @@ size_t	strlcpy(char *dst, const char *src, size_t dstsize)
 
 * j < src_len 은 src범위를 벗어나는 곳을 접근하는 것을 방지해준다. (dest_len + j) + 1 < size 는 dest_len을 제외한 size - 1만큼만 복사가 될 수
  있도록 한다. 마지막 널문자를 추가해주기 위함이다.
+* 이전 코드에서 strlen을 사용해서 구현했을 때 war machine에서 bus error 났었음. 원인이 뭘까?
 ```c
-size_t	ft_strlcat(char *dst, char *src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	size_t i;
+	size_t j;
+
+	i = 0;
+	j = 0;
+	while (dst[i] && i < dstsize)
+		i++;
+	while (src[j] && (i + j + 1) < dstsize)
+	{
+		dst[i + j] = src[j];
+		j++;
+	}
+	if (i < dstsize)
+		dst[i + j] = '\0';
+	return (i + ft_strlen(src));
+}
 ```
 
 ### strchr
