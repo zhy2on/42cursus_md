@@ -131,6 +131,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n);
 * C04 - 03문제에서 int형 범위 말고 unsigned long long까지 고려해야 함.
 * 문자열을 정수로 바꾸는 함수.
 * 문자열 길이가 20넘어가면 양수일 때 -1, 음수일 때 0으로 값이 고정됨.
+* 피신에서는 +, -가 여러 번 반복 돼도 됐었는데, 원래 atoi함수에서는 두 개 이상 넘어가면 안 됨. while문을 if문으로 바꾸어 부호 검사하고, 그 다음부턴 while문으로 숫자 검사하면 올바르게 고쳐진다.
 ```c
 int		ft_atoi(const char *str)
 ```
