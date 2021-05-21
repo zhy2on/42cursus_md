@@ -198,3 +198,68 @@ char	*ft_strjoin(char const *s1, char const *s2)
 ```
 
 ### ft_strtrim
+* s1의 앞뒤로 set안에 있는 문자열을 자른다.
+* 앞에서부터 set안에 있는 문자열이 안 나올 때까지 자르고, 뒤에서부터 또 set안에 있는 문자열이 안 나올 때까지 자르는 것이다.
+* 앞 뒤가 잘린 substring이 반환되는 것이다.
+```c
+char	*ft_strtrim(char const *s1, char const *set)
+```
+
+### ft_split
+* 문자열을 특정 문자 기준으로 잘라서 이중포인터로 저장하여 반환해준다.
+* ㅠㅠ..피신 때 했던 걸로 수정해서 냈는데 워머신에서 버스에러가 난다... --> ft_calloc으로 해결
+* strs에 str만큼 할당 할 때, str이 제대로 할당 안 돼서 그냥 리턴 널해버리면 그 전에 strs에 할당해뒀던 메모리를 해제하지 못한 상황에서
+ 그냥 널이 리턴되니까 그 전에 있던 strs를 해제해 줄 수 있게 바꿔야 한다.
+* 아ㅏ...여기선 malloc 말고 ft_calloc 활용하기. 애초에 0으로 채워놓으면 나중에 마지막에 따로 0 채워서 리턴 안 해줘도 된다...
+```c
+char	**ft_split(char const *s, char c);
+```
+
+### ft_iota
+* 이것도 ft_calloc활용.
+* 10진수 정수니까 10씩 나눠서 길이 얼마나 나오는지 확인하는데, 음수나 0이면 1부터 시작해서 세야 한다. 음수는 -붙여주기 위해서, 0은 while문에 걸려서 바로 빠져나가 버리니까.
+```c
+char	*ft_itoa(int n)
+```
+
+### ft_strmapi
+* 각 문자에 함수 f를 적용시켜 새로운 문자열을 반환시켜 주는 함수.
+* i는 인덱스이다.
+```c
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+```
+
+### ft_putchar_fd
+* fd 파일에 문자 쓰는 함수.
+* 파일 제대로 안 열리면(fd가 < 0 이면) 그냥 리턴. (예외처리)
+```c
+void	ft_putchar_fd(char c, int fd);
+```
+
+### ft_putstr_fd
+* 이건 fd 파일에 문자열 쓰는 함수.
+* write자체가, buffer에 있는 데이터를 buffer size만큼 fd에 쓰는 거기 때문에 그냥 
+```c
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (!s || fd < 0)
+		return ;
+	write(fd, s, ft_strlen(s));
+}
+```
+이렇게 해주면 된다.
+
+### ft_putend_fd
+* 그냥 putstr하고 마지막에 개행 넣어주는 것만 차이점 있음.
+```c
+void	ft_putendl_fd(char *s, int fd)
+```
+
+### ft_putnbr_fd
+* 숫자 fd에 문자로 써주는 함수.
+* 음수일 때는 '-' 먼저 붙여주고 양수로 바꿔서 재귀 돌려줄 거기 때문에, -끝값만 오버플로 처리 위해 그냥 써준다.
+* -끝값 아닌 경우, 한자리 수가 될 때까지 나눠서 계속 재귀로 보내고, 한 자리 수가 남으면 그대로 출력하고
+* 그 다음부터는 재귀 탈출하면서 % 10한 값을 출력하게 한다.
+```c
+void	ft_putnbr_fd(int n, int fd)
+```
