@@ -182,3 +182,19 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *src);
 ```
 
+### ft_substr
+* s에서 start부터 len까지 substring 만들어서 반환.
+* s가 빈 문자열이거나, start위치가 s의 길이를 넘어가는 경우 예외처리.
+* 마지막에 널문자 붙여서 반환해준다.
+```c
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+```
+
+### ft_strjoin
+* s1에 s2를 붙인다.
+* s1이나 s2가 널이면 예외처리 한다.
+```c
+char	*ft_strjoin(char const *s1, char const *s2)
+```
+
+### ft_strtrim
