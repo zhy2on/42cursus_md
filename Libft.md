@@ -263,3 +263,55 @@ void	ft_putendl_fd(char *s, int fd)
 ```c
 void	ft_putnbr_fd(int n, int fd)
 ```
+
+##BONUS PART
+### ft_lstnew
+* 리스트 생성 함수.
+* 동적 할당 제대로 된 경우, content 채우고, next 널로 채워서 해당 리스트 포인터 반환.
+```c
+t_list	*ft_lstnew(void *content)
+```
+
+### ft_lstadd_front
+* 리스트 맨 앞에 노드 삽입하는 함수.
+* 리스트 시작점이 바뀌는 것이기 때문에, 이중포인터로 전달해주고 시작포인터도 갱신해줘야 한다.
+```c
+void	ft_lstadd_front(t_list **lst, t_list *new)
+```
+
+### ft_lstsize
+* 리스트의 크기 알아내는 함수.
+* 리스트가 널일 때까지 while문 돌면서 size값 갱신
+```c
+int	ft_lstsize(t_list *lst)
+```
+
+### ft_lstlast
+* 리스트 마지막 노드 알아내는 함수.
+* 리스트의 next가 널일 때까지 while문 돌다가 마지막위치 반환.
+```c
+t_list	*ft_lstlast(t_list *lst)
+```
+
+### ft_lstadd_back
+* 리스트 마지막에 노드 삽입하는 함수.
+* 함수인자가 널인 경우 예외처리
+* lst가 널이면 그냥 바로 new 대입해주고, 아니라면 ft_lstlast로 마지막 노드 알아내서 next에 new 연결해주면 된다.
+```c
+void	ft_lstadd_back(t_list **lst, t_list *new)
+```
+
+### ft_lstdelone
+* 노드 삭제하는 함수.
+* t_list구조체에서 content가 void 포인터였어서, 그냥 바로 노드를 free시키면 안 되고 content를 del함수로 적절하게 처리해주고 난 다음에 노드 free 시켜줘야 한다.
+```c
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+```
+
+### ft_lstiter
+* 리스트 돌면서 각 content에 f함수 적용시키는 함수.
+```c
+void    ft_lstiter(t_list *lst, void (*f)(void *))
+```
+
+### 
