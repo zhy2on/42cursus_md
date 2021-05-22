@@ -203,6 +203,7 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *src);
 ```
 
+## PART2
 ### ft_substr
 * s에서 start부터 len까지 substring 만들어서 반환.
 * s가 빈 문자열이거나, start위치가 s의 길이를 넘어가는 경우 예외처리.
@@ -285,7 +286,7 @@ void	ft_putendl_fd(char *s, int fd)
 void	ft_putnbr_fd(int n, int fd)
 ```
 
-##BONUS PART
+## BONUS PART
 ### ft_lstnew
 * 리스트 생성 함수.
 * 동적 할당 제대로 된 경우, content 채우고, next 널로 채워서 해당 리스트 포인터 반환.
