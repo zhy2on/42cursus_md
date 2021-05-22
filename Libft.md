@@ -138,25 +138,46 @@ int		ft_atoi(const char *str)
 
 ### isalpha
 * 알파벳이면 1 아니면 0
+```c
+int	ft_isalpha(int c)
+```
 
 ### isdigit
 * 숫자면 1 아니면 0
+```c
+int	ft_isdigit(int c)
+```
 
 ### isalnum
 * 알파벳 또는 숫자면 1 아니면 0
+```c
+int	ft_isalnum(int c)
+```
 
 ### isascii
 * 아스키범위 내 값이면 1 아니면 0
+```c
+int	ft_isascii(int c)
+```
 
 ### isprint
 * printable이면 1 아니면 0
 * 0~31, 127
+```c
+int	ft_isprint(int c)
+```
 
 ### toupper
 * 소문자를 대문자로
+```c
+int	ft_toupper(int c)
+```
 
 ### tolower
 * 대문자를 소문자로
+```c
+int	ft_tolower(int c)
+```
 
 ### calloc
 * malloc과 같은데, 대신 할당된 공간을 0으로 채워줌.
