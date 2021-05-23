@@ -133,7 +133,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n);
 * 문자열 길이가 20넘어가면 양수일 때 -1, 음수일 때 0으로 값이 고정됨.
 * 피신에서는 +, -가 여러 번 반복 돼도 됐었는데, 원래 atoi함수에서는 두 개 이상 넘어가면 안 됨. while문을 if문으로 바꾸어 부호 검사하고, 그 다음부턴 while문으로 숫자 검사하면 올바르게 고쳐진다.
 ```c
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 ```
 
 ### isalpha
@@ -336,4 +336,9 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 void    ft_lstiter(t_list *lst, void (*f)(void *))
 ```
 
-### 
+### ft_lstmap
+* 각 lst노드에 함수 적용시킨 새로운 new list 반환 하는 함수.
+* 중간에 새로운 노드 생성에 문제가 생겼을 시, 이전에 만들었던 노드들을 모두 삭제해주고 리턴 돼야 하기 때문에 ft_lstclear를 써준다.
+```c
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+```
