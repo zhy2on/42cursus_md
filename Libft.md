@@ -59,6 +59,7 @@ size_t	ft_strlen(const char *s);
 * c02-10. 크기 제한 문자열 복사 함수. NULL 종료를 보장해야 한다.
 * size - 1 만큼 복사하고 마지막 문자를 널로 채운다.
 * strlcpy, strlcat은 생성하려고 한 문자열 전체 길이를 반환한다. strlcpy에서는 src의 길이가 반환된다.
+* ft_strlen을 하기 전에 src 널체크를 해줘야 한다. ft_strlen은 s가 널이어도 무조건 접근한다.
 ```c
 size_t	strlcpy(char *dst, const char *src, size_t dstsize)
 ```
