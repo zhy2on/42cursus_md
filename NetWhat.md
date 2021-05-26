@@ -52,10 +52,9 @@ A. FIRST(A)
 ![image](https://user-images.githubusercontent.com/52701529/119637498-adf35a80-be50-11eb-86cc-2941951a4c60.png)
 
 # Q Which of the following propositions is not true?
-* TCP/UDP? 전송계층에서 사용되는 프로토콜. 전송계층은 IP에 의해 전달되는 패킷의 오류를 검사하고 재전송 요구 등의 제어를 담당하는 계층이다.
-* TCP(연결지향형 프로토콜) vs UDP(비연결지향형 프로토콜)
-
 A. UDP does not support broadcasting(X)
+ * TCP/UDP? 전송계층에서 사용되는 프로토콜. 전송계층은 IP에 의해 전달되는 패킷의 오류를 검사하고 재전송 요구 등의 제어를 담당하는 계층이다.
+ * TCP(연결지향형 프로토콜) vs UDP(비연결지향형 프로토콜)
  * TCP와 구별되는 UDP의 특징.
  * Broadcasting: 한 개체가 특정 네트워크에 속한 모든 개체에게 데이터를 보내는 모델을 브로캐스팅이라 한다. 브로드캐스팅은 송신자가 보낸 데이터 하나를 다수의 수신자가 받는 방식이다. 송신자가 보내는 메시지는 모든 개체에게 전달되고, 각 개체는 이 메시지가 브로드캐스트 주소로 보낸 것임을 확인하고 읽어들인다.
 
