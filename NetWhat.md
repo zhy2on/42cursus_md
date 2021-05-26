@@ -52,17 +52,23 @@ A. FIRST(A)
 ![image](https://user-images.githubusercontent.com/52701529/119637498-adf35a80-be50-11eb-86cc-2941951a4c60.png)
 
 # Q Which of the following propositions is not true?
-A. UDP does not support broadcasting(X)
- * TCP와 구별되는 UDP의 특징. 
-* 오답
-* UDP is faster, simpler and more efficient than TCP
- * UDP는 비연결지향적. + 최소한의 오류만 검출 -> TCP에 비해 속도가 빠르다.
- * https://namu.wiki/w/UDP 활용되는 분야: 스트리밍 분야나 온라인 게임의 서버-클라이언트 통신에 대부분 UDP가 사용된다. 데이터가 빠짐없이 전송되는 것보다 빠른 응답속도가 중요하기 때문이다.
-* UDP only has the basic error control mechanism
- * UDP 헤더의 CheckSum 필드를 통해 최소한의 오류만 검출한다. (신뢰성이 낮다)
- * 애초에 실시간 스트리밍 서비스 같은 분야에서 TCP의 신뢰성 중심의 통신 방법이 걸림돌이 되어 UDP가 제시된 것이다. 
-* UDP is a datagram oriented protocol -> UDP는 데이터를 데이터그램 단위로 처리하는 프로토콜이다. 
 * TCP/UDP? 전송계층에서 사용되는 프로토콜. 전송계층은 IP에 의해 전달되는 패킷의 오류를 검사하고 재전송 요구 등의 제어를 담당하는 계층이다.
 * TCP(연결지향형 프로토콜) vs UDP(비연결지향형 프로토콜)
-* Checksum: network를 통해 패킷을 송/수신하는 중에 헤더나 데이터가 손상되지 않았다는 것을 보증하기 위해 사용된다.
-* Broadcasting: 한 개체가 특정 네트워크에 속한 모든 개체에게 데이터를 보내는 모델을 브로캐스팅이라 한다. 브로드캐스팅은 송신자가 보낸 데이터 하나를 다수의 수신자가 받는 방식이다. 송신자가 보내는 메시지는 모든 개체에게 전달되고, 각 개체는 이 메시지가 브로드캐스트 주소로 보낸 것임을 확인하고 읽어들인다.
+
+A. UDP does not support broadcasting(X)
+ * TCP와 구별되는 UDP의 특징.
+ * Broadcasting: 한 개체가 특정 네트워크에 속한 모든 개체에게 데이터를 보내는 모델을 브로캐스팅이라 한다. 브로드캐스팅은 송신자가 보낸 데이터 하나를 다수의 수신자가 받는 방식이다. 송신자가 보내는 메시지는 모든 개체에게 전달되고, 각 개체는 이 메시지가 브로드캐스트 주소로 보낸 것임을 확인하고 읽어들인다.
+
+* 오답
+* UDP is faster, simpler and more efficient than TCP
+  * UDP는 비연결지향적. + 최소한의 오류만 검출 -> TCP에 비해 속도가 빠르다.
+  * https://namu.wiki/w/UDP 활용되는 분야: 스트리밍 분야나 온라인 게임의 서버-클라이언트 통신에 대부분 UDP가 사용된다. 데이터가 빠짐없이 전송되는 것보다 빠른 응답속도가 중요하기 때문이다.
+* UDP only has the basic error control mechanism
+  * UDP 헤더의 CheckSum 필드를 통해 최소한의 오류만 검출한다. (신뢰성이 낮다)
+  * Checksum: network를 통해 패킷을 송/수신하는 중에 헤더나 데이터가 손상되지 않았다는 것을 보증하기 위해 사용된다.
+  * 애초에 실시간 스트리밍 서비스 같은 분야에서 TCP의 신뢰성 중심의 통신 방법이 걸림돌이 되어 UDP가 제시된 것이다. 
+* UDP is a datagram oriented protocol
+  * UDP는 데이터를 데이터그램 단위로 처리하는 프로토콜이다. 
+
+
+
