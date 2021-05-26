@@ -40,7 +40,7 @@ A. Domain name system
 * 호스트 이름(hostname)은 이런 호스트(host)에 부여된 이름(name)입니다. IP주소를 갖고 있는 '어떤 것'에 '이름(name)'을 부여한 것입니다. 이미 IP주소를 갖고 있는데 왜 이름을 더 부여할까요? IP주소는 사람이 일일이 기억하기 힘들기 때문에 기억하기 쉬운 이름을 부여하여 통신에 사용합니다.
 * 단적으로 말하자면, 호스트 이름은 도메인 이름의 한 가지 특수한 유형입니다. 도메인 이름 중에서 IP주소를 설정할 수 있는 이름이 호스트 이름입니다. 호스트 이름은 도메인 이름의 유형 중 일부분입니다. 출처: https://dnssec.tistory.com/26 [DNS Lab.]
 
-# Q. Which IP address class has more host addresses available by default?
+# Q Which IP address class has more host addresses available by default?
 A. FIRST(A)
 * Class란? 하나의 IP주소에서 네트워크 영역과 호스트 영역을 나누는 방법이자, 약속이다.
 * IPv4주소는 네트워크의 크기나 호스트의 수에 따라 A, B, C, D, E 클래스로 나누어진다. A, B, C 클래스는 일반 사용자에게 부여하는 네트워크 구성용, D 클래스는 멀티캐스트용, E 클래스는 향후 사용을 위하여 예약된 주소이다.
@@ -51,8 +51,10 @@ A. FIRST(A)
   * 그리고 호스트 주소가 가질 수 있는 갯수는 (2^24) - 2개 이다. (-2 이유는 모두가 1인경우 브로드캐스트 주소로 사용하고 모두 0인 경우엔 네트워크 주소로 사용하기 때문)
 ![image](https://user-images.githubusercontent.com/52701529/119637498-adf35a80-be50-11eb-86cc-2941951a4c60.png)
 
-# Q. Which of the following propositions is not true?
+# Q Which of the following propositions is not true?
 A. UDP does not support broadcasting(X)
+-> TCP와 
+* 오답
 UDP is faster, simpler and more efficient than TCP
 -> UDP는 비연결지향적. + 최소한의 오류만 검출 -> TCP에 비해 속도가 빠르다.
 -> https://namu.wiki/w/UDP 활용되는 분야: 스트리밍 분야나 온라인 게임의 서버-클라이언트 통신에 대부분 UDP가 사용된다. 데이터가 빠짐없이 전송되는 것보다 빠른 응답속도가 중요하기 때문이다.
@@ -62,4 +64,4 @@ UDP only has the basic error control mechanism
 UDP is a datagram oriented protocol -> UDP는 데이터를 데이터그램 단위로 처리하는 프로토콜이다. 
 * TCP/UDP? 전송계층에서 사용되는 프로토콜. 전송계층은 IP에 의해 전달되는 패킷의 오류를 검사하고 재전송 요구 등의 제어를 담당하는 계층이다.
 * TCP(연결지향형 프로토콜) vs UDP(비연결지향형 프로토콜)
-* 
+* Checksum: network를 통해 패킷을 송/수신하는 중에 헤더나 데이터가 손상되지 않았다는 것을 보증하기 위해 사용된다. 
