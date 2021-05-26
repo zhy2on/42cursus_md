@@ -11,3 +11,13 @@
 ### IPv6
 * IPv4의 고갈문제를 해결하기 위해 제시된 대안.
 * 128비트.
+
+
+# 예비문제
+
+# 21
+Q. What are the different layers of the OSI model?
+A. Application - Presentation - Session - Transport - Network - Data Link - Physical
+* 국제표준화기구(ISO)에서 만든 네트워크 통신의 7단계 과정.
+* (최상위)응용 -> 표현 -> 세션 -> 전송 -> 네트워크 -> 데이터링크 -> 물리(최하위)
+* ![image](https://user-images.githubusercontent.com/52701529/119629052-a039d700-be48-11eb-9a7b-41a39ceee593.png)
