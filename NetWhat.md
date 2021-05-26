@@ -40,7 +40,7 @@ A. Domain name system
 * 호스트 이름(hostname)은 이런 호스트(host)에 부여된 이름(name)입니다. IP주소를 갖고 있는 '어떤 것'에 '이름(name)'을 부여한 것입니다. 이미 IP주소를 갖고 있는데 왜 이름을 더 부여할까요? IP주소는 사람이 일일이 기억하기 힘들기 때문에 기억하기 쉬운 이름을 부여하여 통신에 사용합니다.
 * 단적으로 말하자면, 호스트 이름은 도메인 이름의 한 가지 특수한 유형입니다. 도메인 이름 중에서 IP주소를 설정할 수 있는 이름이 호스트 이름입니다. 호스트 이름은 도메인 이름의 유형 중 일부분입니다. 출처: https://dnssec.tistory.com/26 [DNS Lab.]
 
-# Q Which IP address class has more host addresses available by default?
+# Q. Which IP address class has more host addresses available by default?
 A. FIRST(A)
 * Class란? 하나의 IP주소에서 네트워크 영역과 호스트 영역을 나누는 방법이자, 약속이다.
 * IPv4주소는 네트워크의 크기나 호스트의 수에 따라 A, B, C, D, E 클래스로 나누어진다. A, B, C 클래스는 일반 사용자에게 부여하는 네트워크 구성용, D 클래스는 멀티캐스트용, E 클래스는 향후 사용을 위하여 예약된 주소이다.
@@ -51,7 +51,7 @@ A. FIRST(A)
   * 그리고 호스트 주소가 가질 수 있는 갯수는 (2^24) - 2개 이다. (-2 이유는 모두가 1인경우 브로드캐스트 주소로 사용하고 모두 0인 경우엔 네트워크 주소로 사용하기 때문)
 ![image](https://user-images.githubusercontent.com/52701529/119637498-adf35a80-be50-11eb-86cc-2941951a4c60.png)
 
-# Q Which of the following propositions is not true?
+# Q. Which of the following propositions is not true?
 A. UDP does not support broadcasting(X)
  * TCP/UDP? 전송계층에서 사용되는 프로토콜. 전송계층은 IP에 의해 전달되는 패킷의 오류를 검사하고 재전송 요구 등의 제어를 담당하는 계층이다.
  * TCP(연결지향형 프로토콜) vs UDP(비연결지향형 프로토콜)
@@ -59,15 +59,31 @@ A. UDP does not support broadcasting(X)
  * Broadcasting: 한 개체가 특정 네트워크에 속한 모든 개체에게 데이터를 보내는 모델을 브로캐스팅이라 한다. 브로드캐스팅은 송신자가 보낸 데이터 하나를 다수의 수신자가 받는 방식이다. 송신자가 보내는 메시지는 모든 개체에게 전달되고, 각 개체는 이 메시지가 브로드캐스트 주소로 보낸 것임을 확인하고 읽어들인다.
 
 * 오답
-* UDP is faster, simpler and more efficient than TCP
+* UDP is faster, simpler and more efficient than TCP(O)
   * UDP는 비연결지향적. + 최소한의 오류만 검출 -> TCP에 비해 속도가 빠르다.
   * https://namu.wiki/w/UDP 활용되는 분야: 스트리밍 분야나 온라인 게임의 서버-클라이언트 통신에 대부분 UDP가 사용된다. 데이터가 빠짐없이 전송되는 것보다 빠른 응답속도가 중요하기 때문이다.
-* UDP only has the basic error control mechanism
+* UDP only has the basic error control mechanism(O)
   * UDP 헤더의 CheckSum 필드를 통해 최소한의 오류만 검출한다. (신뢰성이 낮다)
   * Checksum: network를 통해 패킷을 송/수신하는 중에 헤더나 데이터가 손상되지 않았다는 것을 보증하기 위해 사용된다.
   * 애초에 실시간 스트리밍 서비스 같은 분야에서 TCP의 신뢰성 중심의 통신 방법이 걸림돌이 되어 UDP가 제시된 것이다. 
-* UDP is a datagram oriented protocol
+* UDP is a datagram oriented protocol(O)
   * UDP는 데이터를 데이터그램 단위로 처리하는 프로토콜이다. 
 
 
-
+# Q. Which of the following propositions is not true?
+A. The delivery of data to the destination cannot be guaranteed in TCP(X)
+  * 보장 가능한 것이 TCP이다. 보장 가능하지 않은 것은 UDP이다.
+* 오답
+* TCP does not support broadcasting(O)
+  * TCP는 유니캐스팅만 가능하다.
+* TCP provides extended error checking mechanisms, because it provides flow control and data acknowledgement
+  * UDP에 비해 확장된 에러 체킹 매커니즘을 가지고 있다.(UDP는 checksum으로 기본적인 에러만 검출)
+  * flow control(흐름제어): 수신측이 송신측보다 빠르면 문제없지만, 송신측의 속도가 빠를 경우 문제가 생긴다.
+  * 수신측에서 제한된 저장용량을 초과한 이후에 도착하는 데이터는 손실 될 수 있으며 만약 손실 된다면 불필요하게 응답과 데이터 전송이 송/수신 측 간에 빈번이 발생.
+  * 따라서 이런 위험을 줄이기 위해 송신 측의 전송량을 수신측에 따라 조절해야 함.
+  * Acknowledge Number: 상대방으로부터 수신한 데이터의 바로 다음에 수신할 데이터 순서 번호를 나타낸다. 데이터 전송자에게 패킷을 잘 받았으니 그 다음 패킷을 송신하라는 의미로 사용된다. (TCP의 기능과 패킷 구조: https://mr-zero.tistory.com/36)
+* Data sequencing is a TCP feature (this means that packets arrive in order in the recipient)(O)
+  * Sequence Number를 사용하여 데이터의 순서번호를 표기한다. Sequence Number와 Acknowledge Number를 통해 통신의 신뢰성을 보장한다.
+  * TCP는 데이터 유실 등을 확인하기 위해 데이터마다 Sequence Number를 붙여 전송을 하지만, UDP는 데이터 유실에 관심이 없기 때문에 Sequence Number가 없는 Non-Sequencing 프로토콜이다.
+* TCP is reliable because it guarantees the delivery of data to the router of the destination
+  * TCP는 신뢰성. (TCP vs UDP표: https://www.geeksforgeeks.org/differences-between-tcp-and-udp/)
