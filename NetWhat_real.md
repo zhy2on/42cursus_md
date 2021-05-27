@@ -68,7 +68,7 @@
 
 ## Which protocol does DHCP use at the Transport layer?
 * DHCP: DHCP 서버를 사용하여 IP 주소 및 관련된 기타 구성 세부 정보를 네트워크의 DHCP 사용 클라이언트에게 동적으로 할당하는 방법을 제공한다. 
-* UDP: 맞는 답이다.
+* UDP: 맞는 답이다. https://networkengineering.stackexchange.com/questions/64401/why-does-dhcp-use-udp-and-not-tcp
 * TCP: 1:1 연결이 돼야 한다. ip주소가 없는 상황에서 ip주소를 동적으로 할당시켜 주는 것이기 때문에, ip주소:ip주소 1:1연결이 DHCP에서는 불가능 하다. 그래서 답이 아니다.
 * IP: DHCP가 ip를 자동으로 할당해 주기 위한 프로토콜.
 * ARP: 네트워크 상에서 IP 주소를 물리적 네트워크 주소로 대응(bind)시키기 위해 사용되는 프로토콜. DHCP는 물리적 네트워크 주소가 아니라, IP주소를 할당해주기 위한 프로토콜.
@@ -86,5 +86,22 @@
 * 앞에서 봤듯 DHCP는 UDP를 사용하는 것이 맞다.
 * SMTP(Simple Mail Transfer Protocol): mail 전송 프로토콜. 데이터 전송의 신뢰성, 흐름 중요. TCP를 사용한다.
 * FTP(File Transfer Protocol): 파일 전송 프로토콜. 데이터 전송의 신뢰성, 흐름 중요. TCP를 사용한다.
-* HTTP(Hyper Text Transfer Protocol): 
+* HTTP(Hyper Text Transfer Protocol): 하이퍼텍스트 문서를 교환하기 위한 프로토콜. 인터넷에서 데이터를 주고받을 수 있는 프로토콜이다. 데이터 전송의 신뢰성, 흐름 중요. TCP를 사용한다.
 ![image](https://user-images.githubusercontent.com/52701529/119781817-67f8ce00-bf06-11eb-93bb-493cc5b02c20.png)
+
+## DHCP is used for ________
+* https://www.cisco.com/assets/sol/sb/RV320_Emulators/RV320_Emulator_v1-2-1-14/help/DHCP.html
+* DHCP는 IPv4 and IPv6에 사용된다. 둘 다 지원을 한다.
+
+## Which of this is not true?
+ * The delivery of data to the destination cannot be guaranteed in UDP(O) -> UDP에서 데이터 전송이 보장되지 않는 것이 맞다. UDP는 신뢰성보다 속도를 중시한다.
+ * There is no sequencing of data in UDP. If ordering is required, it has to be managed by the application layer(O) -> UDP는 non sequencing 프로토콜이다. sequence number, acknowledgement number등 흐름을 제어할 수 있는 비트가 따로 있는 TCP와 달리 UDP는 흐름을 제어할 수 있는 비트가 따로 없다.
+ * UDP is faster, simpler and more efficient than TCP(O) -> UDP는 속도 중시. 애초에 TCP가 실시간 스트리밍이나 게임 등에서 속도면에서 걸림돌이 생겨 나온 것이 UDP이다.
+ * UDP supports Broadcasting(O) -> UDP는 1:1 연결이 필요 없기 때문에 브로드캐스팅이 가능하다. 브로드캐스팅이란 송신 호스트가 전송한 데이터가 네트워크에 연결된 모든 호스트에 전송되는 방식이다.
+ * UDP is a datagram-oriented protocol(O) -> UDP 자체가 User Datagram Protocol이다. 데이터그램은 "발신지와 수신지 컴퓨터 그리고 전송 네트웍 사이에서, 이전의 데이터 교환과 관계없이 발신지로부터 수신지 컴퓨터로 배달되어지는 충분한 정보를 갖는 독립적인 데이터 실체"이다. http://www.terms.co.kr/datagram.htm
+ * UDP provides extensive error checking mechanisms. It is because it provides flow control and acknowledgment of data(X) -> UDP는 Checksum만을 이용한 basic error check만 한다.
+![image](https://user-images.githubusercontent.com/52701529/119783468-32ed7b00-bf08-11eb-8fdb-30d8f8cf53d2.png)
+![image](https://user-images.githubusercontent.com/52701529/119783531-40a30080-bf08-11eb-92cf-7d54edf1c2a8.png)
+
+
+
