@@ -28,6 +28,7 @@
 ## Which protocol does Ping use?
 * Ping이란? 네트워크 상태를 체크할 때 쓰이는 ICMP중 하나이다.
 * ICMP란? ICMP는 TCP/IP에서 IP 패킷을 처리할 때 발생되는 문제를 알려주는 프로토콜이다.
+* ICMP는 해당 호스트가 없거나, 해당 포트에 대기중에 서버 프로그램이 없는 등의 에러 상황이 발생할 경우 IP헤더에 기록되어 있는 출발지 호스트로 이러한 에러에 대한 상황을 보내주는 역할을 수행하게 된다.
 * 그냥 정의 되어 있는 개념. 외워야 한다.
 * https://biggerdata.tistory.com/41
 
@@ -66,9 +67,17 @@
 * ip주소에 고정 아이피와 동적 아이피가 있다고 했는데, 동적 아이피가 DHCP와 관련 된 것.
 
 ## Which protocol does DHCP use at the Transport layer?
-* DHCP
-* UDP : 
-* ARP : 네트워크 상에서 IP 주소를 물리적 네트워크 주소로 대응(bind)시키기 위해 사용되는 프로토콜
+* DHCP: DHCP 서버를 사용하여 IP 주소 및 관련된 기타 구성 세부 정보를 네트워크의 DHCP 사용 클라이언트에게 동적으로 할당하는 방법을 제공한다. 
+* UDP: 맞는 답이다.
+* TCP: 1:1 연결이 돼야 한다. ip주소가 없는 상황에서 ip주소를 동적으로 할당시켜 주는 것이기 때문에, ip주소:ip주소 1:1연결이 DHCP에서는 불가능 하다. 그래서 답이 아니다.
+* IP: DHCP가 ip를 자동으로 할당해 주기 위한 프로토콜.
+* ARP: 네트워크 상에서 IP 주소를 물리적 네트워크 주소로 대응(bind)시키기 위해 사용되는 프로토콜. DHCP는 물리적 네트워크 주소가 아니라, IP주소를 할당해주기 위한 프로토콜.
 
+## Which class of IP address has the most host addresses available by default?
+* IPv4의 클래스마다 할당된 호스트 어드레스 범위가 다르다. 가장 많이 할당된 곳은 A클래스.
+* ![image](https://user-images.githubusercontent.com/52701529/119780188-76de8100-bf04-11eb-975e-7c005910c052.png)
 
-
+## What is the default subnet mask for a class C network?
+* 기본 서브넷 마스크: 별개의 서브넷마스크를 생성하지 않아도 기본적으로 적용되어 있는게 기본 서브넷마스크.
+* 
+* 위에서 할당된 호스트 어드레스 범위 보면 알 수 있듯이, Class A, B, C 순서대로 255.0.0.0, 255.255.0.0, 255.255.255.0
