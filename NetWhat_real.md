@@ -7,7 +7,7 @@
 
 ## To test the IP stack on your local host, which IP address would you ping?
 * 로컬 호스트의 ip를 묻는 문제이다.
-* 거의 모든 컴퓨터환경에서 자기 자신을 접근하는(loopback 이라고 한다고 함) 경우가 잦다.
+* 거의 모든 컴퓨터환경에서 자기 자신을 접근하는(loopback 이라고 한다고 함) 경우가 잦다. -> ping localhost 또는 ping 127.0.0.1 로 확인한다. https://velog.io/@taypark/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EB%B3%B8-ping
 * 그리하여 OS 자체적으로 제공하고 , 항상 고정되어 있는 IP(127.0.0.1) 과 호스트네임(localhost)을 갖는다.
 * 127.0.0.1은 예약된 IP 주소로 인터넷상에 일반 IP로는 쓰일 수 없는 주소이다.
 * OS에서 가상으로 지원하며, 랜카드 등 디바이스 자체를 통과하지 않고 소프트웨어적으로 처리된다.
