@@ -79,5 +79,12 @@
 
 ## What is the default subnet mask for a class C network?
 * 기본 서브넷 마스크: 별개의 서브넷마스크를 생성하지 않아도 기본적으로 적용되어 있는게 기본 서브넷마스크.
-* 
-* 위에서 할당된 호스트 어드레스 범위 보면 알 수 있듯이, Class A, B, C 순서대로 255.0.0.0, 255.255.0.0, 255.255.255.0
+* 위에서 봤듯이 Class C는 0~255 사이에서 나눠짐. 기본 서브넷마스크는 255.255.255.0
+* Class A, B, C 순서대로 255.0.0.0, 255.255.0.0, 255.255.255.0
+
+## Which of the following services use UDP? 1. DHCP 2. SMTP 3. FTP 4. HTTP
+* 앞에서 봤듯 DHCP는 UDP를 사용하는 것이 맞다.
+* SMTP(Simple Mail Transfer Protocol): mail 전송 프로토콜. 데이터 전송의 신뢰성, 흐름 중요. TCP를 사용한다.
+* FTP(File Transfer Protocol): 파일 전송 프로토콜. 데이터 전송의 신뢰성, 흐름 중요. TCP를 사용한다.
+* HTTP(Hyper Text Transfer Protocol): 
+![image](https://user-images.githubusercontent.com/52701529/119781817-67f8ce00-bf06-11eb-93bb-493cc5b02c20.png)
