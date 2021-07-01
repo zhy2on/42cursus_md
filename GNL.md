@@ -4,18 +4,18 @@
 * 파일을 읽는 중 오류가 있었을 경우 -1, 라인을 올바로 읽어들인 경우 1, 파일을 모두 읽었을 경우 0을 반환한다.
 
 ## 함수 개요
-* ```c int		get_next_line(int fd, char **line);```
+* ``c int		get_next_line(int fd, char **line);```
   * 메인 함수. fd의 내용을 read를 이용해 BUFFER_SIZE만큼 buf에 담으며 읽는다. rsize가 0보다 큰 경우 while문을 돌며 static char/* 변수인 backup에 buf를 계속 붙여간다.
   * buf에 개행이 있으면 탈출한다.
   * return_case 함수를 리턴값으로 갖는다.  
-* ```c int		return_case(char **backup, char **line, int rsize);```
+* ``c int		return_case(char **backup, char **line, int rsize);```
   * get_next_line에서 받은 backup과 rsize를 가지고 line에 어떤 값을 넣어야 하는지, 어떤 값을 리턴해야 하는지 결정한다.
   * rsize < 0 인 경우 -1을 리턴한다.
   * backup이 존재하는 경우
   * 개행이 존재한다면, update_line 함수를 이용해 line에 개행 전까지의 내용을 할당해주고 1을 리턴한다.
   * 개행이 존재하지 않는다면, backup을 그대로 line에 할당해주고 0을 리턴한다.
   * backup이 존재하지 않는 경우 "\0" 문자열을 line에 할당해주고 0을 리턴한다.
-* ```c int		update_line(char **backup, char **line, char *pcut);```
+* ``c int		update_line(char **backup, char **line, char *pcut);```
   * 개행 전까지 line에 할당해주고 기존의 bakcup을 free한 후 개행 다음부터의 내용을 다시 backup에 할당한 후 1을 리턴한다.
 
 ## 비고
