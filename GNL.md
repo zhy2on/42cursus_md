@@ -7,7 +7,7 @@
 ```c
 int	get_next_line(int fd, char **line);
 ```
-  * 메인 함수. fd의 내용을 read를 이용해 BUFFER_SIZE만큼 buf에 담으며 읽는다. rsize가 0보다 큰 경우 while문을 돌며 static char/* 변수인 backup에 buf를 계속 붙여간다.
+  * 메인 함수. fd의 내용을 read를 이용해 BUFFER_SIZE만큼 buf에 담으며 읽는다. rsize가 0보다 큰 경우 while문을 돌며 static char* 변수인 backup에 buf를 계속 붙여간다.
   * buf에 개행이 있으면 탈출한다.
   * return_case 함수를 리턴값으로 갖는다.  
 ```c
