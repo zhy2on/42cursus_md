@@ -1,4 +1,4 @@
-# NetWhat
+# netwhat
 ## Which of the following is private IP address?
 * 사설 ip주소를 고르는 문제이다.
 * IP란? internet protocol. 인터넷에 연결되어 있는 각 장치들을 고유하게 식별할 수 있는 식별번호.
@@ -87,6 +87,7 @@
 * SMTP(Simple Mail Transfer Protocol): mail 전송 프로토콜. 데이터 전송의 신뢰성, 흐름 중요. TCP를 사용한다.
 * FTP(File Transfer Protocol): 파일 전송 프로토콜. 데이터 전송의 신뢰성, 흐름 중요. TCP를 사용한다.
 * HTTP(Hyper Text Transfer Protocol): 하이퍼텍스트 문서를 교환하기 위한 프로토콜. 인터넷에서 데이터를 주고받을 수 있는 프로토콜이다. 데이터 전송의 신뢰성, 흐름 중요. TCP를 사용한다.
+
 ![image](https://user-images.githubusercontent.com/52701529/119781817-67f8ce00-bf06-11eb-93bb-493cc5b02c20.png)
 
 ## DHCP is used for ________
