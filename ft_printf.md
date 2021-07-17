@@ -1,7 +1,8 @@
-# FT_PRINTF
+# ft_printf
 ## 기본 개요
 * printf를 구현한다.
 * mandatory part는 specifier로 csdiupxX%만 구현하면 된다.
+* Original printf 에서는 고정 버퍼를 사용한다. 버퍼가 다 차면 출력하고 버퍼를 비우는 식인데, 과제에서는 꼭 그렇게 하지 않아도 된다.
 
 ## 구현 개요
 * 문자열 format과 가변인자를 받는다. printf("format", 변수) 꼴
@@ -34,9 +35,9 @@
   |![image](https://user-images.githubusercontent.com/52701529/125905699-4952d24f-c732-44ad-94e9-c5796ee37f06.png)|![image](https://user-images.githubusercontent.com/52701529/125905803-f7750758-1137-40d5-bc1b-f94fbc59f8c3.png)|
   |![image](https://user-images.githubusercontent.com/52701529/126031506-9b0ad7a2-0f9a-4b84-b7da-9742e1117f6b.png)|![image](https://user-images.githubusercontent.com/52701529/126031524-f9c602d6-8cab-4dda-9e09-bc6837927734.png)
 
-* specifer별 정리
+* specifer별 정리 (mac os 기준)
 
-| specifier | 출력 |
-|-----------|------|
-|%c| '0'flag(mac os에선), '-'flag 유효(이 때 '0'flag 무효). precision 무효. |
-|%s| '0'flag(mac os에선), '-'flag 유효(이 때 '0'flag 무효). precision 무효. |
+| specifier | '-' flag | '+' flag | '0' flag | width | precision |
+|:---------:|:--------:|:--------:|:--------:|:-----:|:---------:|
+|%c| O (이 때 '0' flag 무효)| X | O | O | X |
+|%s| O (이 때 '0' flag 무효)| X | O | O | X |
