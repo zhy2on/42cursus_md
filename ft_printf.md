@@ -8,7 +8,6 @@
 * format 안에서 %를 만날 때까지 출력한다.
 * %를 만나면 flag, precision, specifier에 대한 정보를 분석한다.
 * specifier를 만날 때까지가 printf에서 지정한 서식의 영향이 유효한 범위이다.
-* 
 
 ## 자료 정리
 * printf
@@ -23,7 +22,9 @@
 * 가변인자
   * 가변인자를 사용하기 위해선 최소 한 개 이상의 고정인수가 있어야 하며 ``...``은 파라미터 순서상 가장 마지막에 위치해야 한다.
 * va_start
-  * argument pointer를 고정인수 다음 위치로 초기화 시킨다. 
+  * argument pointer를 고정인수 다음 위치로 초기화 시킨다.
+* va_arg
+  * 가변 인자 포인터에서 특정 자료형 크기만큼 값을 가져온다. 이후 자료형 크기만큼 포인터를 순방향 이동시킨다. <https://dojang.io/mod/page/view.php?id=577>
 * mac os 환경과 wsl 환경에서 플래그 위치에 따른 차이
   * mac os에서는 서식 위치가 바뀌거나 0 flag가 c와 같이 오는 경우도 알아서 출력을 해준다. 여기에 맞춰서 ft_printf를 구현해야 한다.
 
@@ -33,4 +34,9 @@
   |![image](https://user-images.githubusercontent.com/52701529/125905699-4952d24f-c732-44ad-94e9-c5796ee37f06.png)|![image](https://user-images.githubusercontent.com/52701529/125905803-f7750758-1137-40d5-bc1b-f94fbc59f8c3.png)|
   |![image](https://user-images.githubusercontent.com/52701529/126031506-9b0ad7a2-0f9a-4b84-b7da-9742e1117f6b.png)|![image](https://user-images.githubusercontent.com/52701529/126031524-f9c602d6-8cab-4dda-9e09-bc6837927734.png)
 
+* specifer별 정리
 
+| specifier | 출력 |
+|-----------|------|
+|%c| '0'flag(mac os에선), '-'flag 유효(이 때 '0'flag 무효). precision 무효. |
+|%s| '0'flag(mac os에선), '-'flag 유효(이 때 '0'flag 무효). precision 무효. |
