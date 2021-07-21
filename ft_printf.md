@@ -28,6 +28,7 @@
   * 가변 인자 포인터에서 특정 자료형 크기만큼 값을 가져온다. 이후 자료형 크기만큼 포인터를 순방향 이동시킨다. <https://dojang.io/mod/page/view.php?id=577>
 * mac os 환경과 wsl 환경에서 플래그 위치에 따른 차이
   * mac os에서는 서식 위치가 바뀌거나 0 flag가 c와 같이 오는 경우도 알아서 출력을 해준다. 여기에 맞춰서 ft_printf를 구현해야 한다.
+  * mac os에선 NULL 문자열을 출력할 때 (null)이 출력 되고 wsl에선 seg fault가 발생한다.
 
   |mac os|wsl|
   |---|---|
