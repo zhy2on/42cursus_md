@@ -42,9 +42,9 @@
 
 | specifier | '-' flag ('0' flag 무효) | '+' flag | '0' flag | width | precision | 비고 |
 |:---------:|:--------:|:--------:|:--------:|:-----:|:---------:|:----:|
-|%c| O | X | O | O | O | precision만큼 출력하고 width에 맞춰 정렬한다. |
-|%s| O | X | O | O | O | '' |
-|%d| O | O | O | O | X | precision이 존재하면 precision에 맞춰 남은 앞부분을 0으로 채우고, width에 맞춰 공백을 채운다. 이 때 width는 0 flag 이더라도 공백으로 채워진다. precision이 존재하지 않는다면 width에 맞춰 앞 부분을 공백으로 채운다. 이 때 0 flag이면 '0'으로 앞 부분을 채운다. |
+|%c| O | O | X | O | O | precision만큼 출력하고 width에 맞춰 정렬한다. |
+|%s| O | O | X | O | O | '' |
+|%d| O | O | O | O | O | precision이 존재하면 precision에 맞춰 남은 앞부분을 0으로 채우고, width에 맞춰 공백을 채운다. 이 때 width는 0 flag 이더라도 공백으로 채워진다. precision이 존재하지 않는다면 width에 맞춰 앞 부분을 공백으로 채운다. 이 때 0 flag이면 '0'으로 앞 부분을 채운다. |
 |%i| O |   |   |   |   |   |
 |%u| O |   |   |   |   |   |
 |%p| O |   |   |   |   |   |
