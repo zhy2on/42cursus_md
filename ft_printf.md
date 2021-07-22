@@ -37,12 +37,14 @@
   |![image](https://user-images.githubusercontent.com/52701529/126031506-9b0ad7a2-0f9a-4b84-b7da-9742e1117f6b.png)|![image](https://user-images.githubusercontent.com/52701529/126031524-f9c602d6-8cab-4dda-9e09-bc6837927734.png)
 
 * specifer별 정리 (mac os 기준)
+* https://dojang.io/mod/page/view.php?id=736 (코딩도장 서식 지정자별 자료형 크기 참고)
+* flag '0' is ignored when flag '-' is present
 
-| specifier | '-' flag | '+' flag | '0' flag | width | precision | 비고 |
+| specifier | '-' flag ('0' flag 무효) | '+' flag | '0' flag | width | precision | 비고 |
 |:---------:|:--------:|:--------:|:--------:|:-----:|:---------:|:----:|
-|%c| O (이 때 '0' flag 무효)| X | O | O | O | precision만큼 출력하고 width에 맞춰 정렬한다. |
-|%s| O (이 때 '0' flag 무효)| X | O | O | O | '' |
-|%d| O | O | O | O | X |   |
+|%c| O | X | O | O | O | precision만큼 출력하고 width에 맞춰 정렬한다. |
+|%s| O | X | O | O | O | '' |
+|%d| O | O | O | O | X | precision이 존재하면 precision에 맞춰 남은 앞부분을 0으로 채우고, width에 맞춰 공백을 채운다. 이 때 width는 0 flag 이더라도 공백으로 채워진다. precision이 존재하지 않는다면 width에 맞춰 앞 부분을 공백으로 채운다. 이 때 0 flag이면 '0'으로 앞 부분을 채운다. |
 |%i| O |   |   |   |   |   |
 |%u| O |   |   |   |   |   |
 |%p| O |   |   |   |   |   |
@@ -56,3 +58,6 @@
   ```c
   gcc test.c -L ./ -l ftprintf
   ```
+  
+* 숫자 접두사
+  * 숫자 출력 서식지정자에서 가변인자에 접두사 0이 붙은 경우 8진수, 0x/0X가 붙은 경우 16진수를 뜻한다.
