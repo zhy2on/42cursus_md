@@ -26,6 +26,7 @@
   * argument pointer를 고정인수 다음 위치로 초기화 시킨다.
 * va_arg
   * 가변 인자 포인터에서 특정 자료형 크기만큼 값을 가져온다. 이후 자료형 크기만큼 포인터를 순방향 이동시킨다. <https://dojang.io/mod/page/view.php?id=577>
+  * var_type을 설정할 때 char, short 의 경우에는 int로 대신 쓰고, flaot의 경우에는 double로 대신 쓴 이후 형 변환을 해주어야 한다.
 * mac os 환경과 wsl 환경에서 플래그 위치에 따른 차이
   * mac os에서는 서식 위치가 바뀌거나 0 flag가 c와 같이 오는 경우도 알아서 출력을 해준다. 여기에 맞춰서 ft_printf를 구현해야 한다.
   * mac os에선 NULL 문자열을 출력할 때 (null)이 출력 되고 wsl에선 seg fault가 발생한다.
@@ -37,14 +38,14 @@
   |![image](https://user-images.githubusercontent.com/52701529/126031506-9b0ad7a2-0f9a-4b84-b7da-9742e1117f6b.png)|![image](https://user-images.githubusercontent.com/52701529/126031524-f9c602d6-8cab-4dda-9e09-bc6837927734.png)
 
 * specifer별 정리 (mac os 기준)
-* https://dojang.io/mod/page/view.php?id=736 (코딩도장 서식 지정자별 자료형 크기 참고)
-* flag '0' is ignored when flag '-' is present
+  * https://dojang.io/mod/page/view.php?id=736 (코딩도장 서식 지정자별 자료형 크기 참고)
+  * flag '0' is ignored when flag '-' is present
 
 | specifier | '-' flag ('0' flag 무효) | '+' flag | '0' flag | width | precision | 비고 |
-|:---------:|:--------:|:--------:|:--------:|:-----:|:---------:|:----:|
+|:---------:|:--------:|:--------:|:--------:|:-----:|:---------:|----|
 |%c| O | X | O | O | O | precision만큼 출력하고 width에 맞춰 정렬한다. |
 |%s| O | X | O | O | O | '' |
-|%d| O | O | O | O | O | precision이 존재하면 precision에 맞춰 남은 앞부분을 0으로 채우고, width에 맞춰 공백을 채운다. 이 때 width는 0 flag 이더라도 공백으로 채워진다. precision이 존재하지 않는다면 width에 맞춰 앞 부분을 공백으로 채운다. 이 때 0 flag이면 '0'으로 앞 부분을 채운다. |
+|%d| O | O | O | O | O | precision이 존재하면 precision에 맞춰 남은 앞부분을 0으로 채우고 그 앞에 부호를 붙인 후, width에 맞춰 공백을 채운다. 이 때 width는 0 flag 이더라도 공백으로 채워진다. precision이 존재하지 않는다면 width에 맞춰 앞 부분을 공백으로 채운 후 그 앞에 부호를 붙인다. 이 때 0 flag이면 '0'으로 앞 부분을 채운다. |
 |%i| O |   |   |   |   |   |
 |%u| O |   |   |   |   |   |
 |%p| O |   |   |   |   |   |
