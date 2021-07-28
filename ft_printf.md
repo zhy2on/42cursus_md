@@ -37,7 +37,7 @@
   |![image](https://user-images.githubusercontent.com/52701529/125905699-4952d24f-c732-44ad-94e9-c5796ee37f06.png)|![image](https://user-images.githubusercontent.com/52701529/125905803-f7750758-1137-40d5-bc1b-f94fbc59f8c3.png)|
   |![image](https://user-images.githubusercontent.com/52701529/126031506-9b0ad7a2-0f9a-4b84-b7da-9742e1117f6b.png)|![image](https://user-images.githubusercontent.com/52701529/126031524-f9c602d6-8cab-4dda-9e09-bc6837927734.png)
 
-* specifer별 정리 (mac os 기준)
+* specifer별 정리 (mac os 기준) (gcc -Wall -Wextra -Werror 기준...😭 빼먹고 테스트 하다가 큰 일 날 뻔..)
   * https://dojang.io/mod/page/view.php?id=736 (코딩도장 서식 지정자별 자료형 크기 참고)
   * flag '0' is ignored when flag '-' is present
 
@@ -48,7 +48,7 @@
 |%d| O | O | O | O | O | precision이 존재하면 precision에 맞춰 남은 앞부분을 0으로 채우고 그 앞에 부호를 붙인 후, width에 맞춰 공백을 채운다. 이 때 width는 0 flag 이더라도 공백으로 채워진다. precision이 존재하지 않는다면 width에 맞춰 앞 부분을 공백으로 채운 후 그 앞에 부호를 붙인다. 이 때 0 flag이면 '0'으로 앞 부분을 채운다. |
 |%i| O |   |   |   |   |   |
 |%u| O |   |   |   |   |   |
-|%p| O |   |   |   |   |   |
+|%p| O |   |   |   |   | 다른 정수형과   |
 |%x| O |   |   |   |   |   |
 |%X| O |   |   |   |   |   |
 |%%| O |   |   |   |   |   |
