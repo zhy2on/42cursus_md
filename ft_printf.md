@@ -41,17 +41,30 @@
   * https://dojang.io/mod/page/view.php?id=736 (코딩도장 서식 지정자별 자료형 크기 참고)
   * flag '0' is ignored when flag '-' is present
 
-| specifier | '-' flag ('0' flag 무효) | '+' flag | '0' flag | width | precision | 비고 |
+| specifier | '-' flag ('0' flag 무효) | '0' flag | width | precision | 비고 |
 |:---------:|:--------:|:--------:|:--------:|:-----:|:---------:|----|
-|%c| O | X | O | O | O | precision만큼 출력하고 width에 맞춰 정렬한다. |
-|%s| O | X | O | O | O | '' |
-|%d| O | O | O | O | O | precision이 존재하면 precision에 맞춰 남은 앞부분을 0으로 채우고 그 앞에 부호를 붙인 후, width에 맞춰 공백을 채운다. 이 때 width는 0 flag 이더라도 공백으로 채워진다. precision이 존재하지 않는다면 width에 맞춰 앞 부분을 공백으로 채운 후 그 앞에 부호를 붙인다. 이 때 0 flag이면 '0'으로 앞 부분을 채운다. 숫자 0의 경우 .이 찍힌 상태에서 precision이 0이면 숫자 0은 출력되지 않는다. |
-|%i| O | O | O | O | O | %d랑 똑같. |
-|%u| O |   |   |   |   |   |
-|%p| O |   |   | X |   | 앞에 0x를 붙여서 반환한다. 부호의 경우 precision없이 width만 있는 경우 공  |
-|%x| O |   |   |   |   |   |
-|%X| O |   |   |   |   |   |
-|%%| O |   |   |   |   |   |
+|%c| O | O | O | O | precision만큼 출력하고 width에 맞춰 정렬한다. |
+|%s| O | O | O | O | '' |
+|%d| O | O | O | O | precision이 존재하면 precision에 맞춰 남은 앞부분을 0으로 채우고 그 앞에 부호를 붙인 후, width에 맞춰 공백을 채운다. 이 때 width는 0 flag 이더라도 공백으로 채워진다. precision이 존재하지 않는다면 width에 맞춰 앞 부분을 공백으로 채운 후 그 앞에 부호를 붙인다. 이 때 0 flag이면 '0'으로 앞 부분을 채운다. 숫자 0의 경우 .이 찍힌 상태에서 precision이 0이면 숫자 0은 출력되지 않는다. |
+|%i| O | O | O | O | %d랑 똑같. |
+|%u| O |   |   |   |   |
+|%p| O |   | X |   | 앞에 0x를 붙여서 반환한다. 부호의 경우 precision없이 width만 있는 경우 공  |
+|%x| O |   |   |   |   |
+|%X| O |   |   |   |   |
+|%%| O |   |   |   |   |
+
+
+| specifier | '#' flag | ' ' flag | '+' flag | 비고 |
+|:---------:|:--------:|:--------:|:--------:|:-----:|
+|%c|   |   | X |   |
+|%s|   |   | X |   |
+|%d|   |   | O |   |
+|%i|   |   | O |   |
+|%u|   |   |   |   |
+|%p|   |   |   |   |
+|%x|   |   |   |   |
+|%X|   |   |   |   |
+|%%|   |   |   |   |
 
 * library 이용 컴파일
   * ``gcc`` c파일 ``-L`` 라이브러리 경로 ``-l`` 라이브러리명
