@@ -31,12 +31,6 @@
   * mac os에서는 서식 위치가 바뀌거나 0 flag가 c와 같이 오는 경우도 알아서 출력을 해준다. 여기에 맞춰서 ft_printf를 구현해야 한다.
   * mac os에선 NULL 문자열을 출력할 때 (null)이 출력 되고 wsl에선 seg fault가 발생한다.
 
-  |mac os|wsl|
-  |---|---|
-  |![image](https://user-images.githubusercontent.com/52701529/125905615-0faaeb96-0ac8-46a9-98ae-4e381261c315.png)|![image](https://user-images.githubusercontent.com/52701529/125905514-54bf5c66-e88b-46dd-9bfc-d77508be7566.png)|
-  |![image](https://user-images.githubusercontent.com/52701529/125905699-4952d24f-c732-44ad-94e9-c5796ee37f06.png)|![image](https://user-images.githubusercontent.com/52701529/125905803-f7750758-1137-40d5-bc1b-f94fbc59f8c3.png)|
-  |![image](https://user-images.githubusercontent.com/52701529/126031506-9b0ad7a2-0f9a-4b84-b7da-9742e1117f6b.png)|![image](https://user-images.githubusercontent.com/52701529/126031524-f9c602d6-8cab-4dda-9e09-bc6837927734.png)
-
 * specifer별 정리 (mac os 기준) (gcc -Wall -Wextra -Werror 기준...😭 빼먹고 테스트 하다가 큰 일 날 뻔..)
   * https://dojang.io/mod/page/view.php?id=736 (코딩도장 서식 지정자별 자료형 크기 참고)
   * flag '0' is ignored when flag '-' is present
@@ -47,7 +41,7 @@
 |%s| O | X | O | O | precision만큼 출력하고 width에 맞춰 정렬한다. |
 |%d| O | O | O | O | precision이 존재하면 precision에 맞춰 남은 앞부분을 0으로 채우고 음수인 경우 그 앞에 부호를 붙인 후, width에 맞춰 공백을 채운다. 이 때 width는 0 flag 이더라도 공백으로 채워진다. precision이 존재하지 않는다면 width에 맞춰 앞 부분을 공백으로 채운 후 그 앞에 부호를 붙인다. 이 때 0 flag이면 '0'으로 앞 부분을 채운다. 숫자 0의 경우 .이 찍힌 상태에서 precision이 0이면 숫자 0은 출력되지 않는다. |
 |%i| O | O | O | O | '' |
-|%u| O | O | O | O |    |
+|%u| O | O | O | O | '' |
 |%p| O | X | O | X | 앞에 0x를 붙여서 반환한다. 왼쪽 정렬인 경우 0x를 제일 먼저 출력한다. 공백으로 padding할 때는 패딩 이후 0x를 출력한다. |
 |%x| O | O | O | O | precision이 존재하면 precision에 맞춰 남은 앞부분을 0으로 채우고, width에 맞춰 공백을 채운다. |
 |%X| O | O | O | O | '' |
