@@ -41,14 +41,14 @@
   * https://dojang.io/mod/page/view.php?id=736 (코딩도장 서식 지정자별 자료형 크기 참고)
   * flag '0' is ignored when flag '-' is present
 
-| specifier | '-' flag ('0' flag 무효) | '0' flag | width | precision | 비고 |
+| specifier | '-' flag | '0' flag | width | precision | 비고 |
 |:---------:|:------------------------:|:--------:|:-----:|:---------:|------|
-|%c| O | O | O | O | precision만큼 출력하고 width에 맞춰 정렬한다. |
-|%s| O | O | O | O | '' |
+|%c| O | X | X | O | width에 맞춰 정렬한다. |
+|%s| O | X | O | O | precision만큼 출력하고 width에 맞춰 정렬한다. |
 |%d| O | O | O | O | precision이 존재하면 precision에 맞춰 남은 앞부분을 0으로 채우고 그 앞에 부호를 붙인 후, width에 맞춰 공백을 채운다. 이 때 width는 0 flag 이더라도 공백으로 채워진다. precision이 존재하지 않는다면 width에 맞춰 앞 부분을 공백으로 채운 후 그 앞에 부호를 붙인다. 이 때 0 flag이면 '0'으로 앞 부분을 채운다. 숫자 0의 경우 .이 찍힌 상태에서 precision이 0이면 숫자 0은 출력되지 않는다. |
 |%i| O | O | O | O | '' |
 |%u| O |   |   |   |   |
-|%p| O |   | X |   | 앞에 0x를 붙여서 반환한다. 부호의 경우 precision없이 width만 있는 경우 공  |
+|%p| O |   | X |   | 앞에 0x를 붙여서 반환한다. 왼쪽 정렬이거나 0플래그가 있는 경우 0x를 제일 먼저 출력한다.   |
 |%x| O |   |   |   |   |
 |%X| O |   |   |   |   |
 |%%| O |   |   |   |   |
@@ -62,8 +62,8 @@
 |%i| X | O | O | '' |
 |%u| X | X | X |   |
 |%p| X | X | X |   |
-|%x| O | X | X |   |
-|%X| O | X | X |   |
+|%x| O | X | X | #플래그로 0을 출력하는 경우 0x0이 아니라 0이 출력된다. |
+|%X| O | X | X | '' |
 |%%| X | X | X |   |
 
 * library 이용 컴파일
