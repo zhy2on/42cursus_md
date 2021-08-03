@@ -33,7 +33,6 @@
 
 * specifer별 정리 (mac os 기준) (gcc -Wall -Wextra -Werror 기준...😭 빼먹고 테스트 하다가 큰 일 날 뻔..)
   * https://dojang.io/mod/page/view.php?id=736 (코딩도장 서식 지정자별 자료형 크기 참고)
-  * flag '0' is ignored when flag '-' is present
 
 | specifier | '-' flag | '0' flag | width | precision | 비고 |
 |:---------:|:------------------------:|:--------:|:-----:|:---------:|------|
