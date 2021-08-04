@@ -26,7 +26,7 @@
   * printf는 첫 번째 인자로 출력하고자 하는 포맷 문자열을 전달한다.
   * 포맷 지정 문자열의 ``%``문자는 변환 사양 문자로 flags와 길이 수정자가 옵션으로 올 수 있다.
   * 포맷 지정자 문자인 ``diouxXaAeEfFgG%`` 중 하나를 사용한다. <https://ehpub.co.kr/24-printf-%ED%95%A8%EC%88%98/>
-  * ``%[플래그(flag)][폭(width)][.정밀도(precision)][크기(length)]서식 문자(specifier)`` <https://modoocode.com/35>
+  * ``%[플래그(flag)][폭(width)][.정밀도(precision)]서식 문자(specifier)`` <https://modoocode.com/35>
 
 * stdarg.h
   * C언어에서 ``stdarg.h`` 헤더를 사용하면 함수 선언 시 가변 인자(Variable arguments)를 가질 수 있다.
