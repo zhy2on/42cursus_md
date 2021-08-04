@@ -10,6 +10,16 @@
 * %를 만나면 flag, precision, specifier에 대한 정보를 분석한다.
 * specifier를 만날 때까지가 printf에서 지정한 서식의 영향이 유효한 범위이다.
 
+## 함수 개요
+* print_char
+  * width에 맞춰 패딩을 하고 해당 문자를 출력한다. 이 때 %%의 경우 0flag가 가능하며 -flag와 0flag 동시 사용도 가능하다. 이 때 0flag가 무시되기 때문에 해당 부분을 예외처리 해준다.
+* print_string
+  * precision만큼 문자를 출력하고 width에 맞춰 패딩한다. precision이 문자열보다 크더라도 문자열만큼만 출력한다.
+* print_nbr
+  * precision이 존재한다면 0flag는 무시되며, 숫자를 출력하고 precision만큼 남은 부분을 0으로 채우고, 그 다음 width만큼 남은 부분을 공백으로 채운다.
+  * precision이 숫자길이보다 작더라도 숫자길이만큼 출력한다.
+  * 숫자가 0이면서 precison이 0이면 아예 아무것도 출력되지 않는다.
+
 ## 자료 정리
 * printf
   * 인자: 문자열, 가변인자
